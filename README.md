@@ -14,5 +14,5 @@ Exercice sur les forms en JS (eventlistener "keyup" et "change")
 
 ---
 ### Final Project Link
-/
+https://lbeauloi.github.io/Forms/
 ---

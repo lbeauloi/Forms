@@ -1,4 +1,4 @@
-//---EX 1---
+//---EX 1---DISPLAY FIRSTNAME---
 //  Add a keyup listener on the first input field, so that once you type a letter in this field, it goes into the <span id="display-firstname">. The content of the field and the span should always remain the same.
 
 // on choppe l'input et le span via leur ID
@@ -12,7 +12,7 @@ inputField.addEventListener("keyup", function () {
   console.log(readyToDisplay);
 });
 
-//---EX2---
+//---EX2---PASSWORD VERIFIER---
 // Add a keyup listener on the second input (the number input), so that if the age is below 18 the content of the section a-hard-truth remains hidden, otherwise show them this hard to swallow fact.
 
 // si age <18 --> section reste cachée
@@ -26,7 +26,7 @@ ageField.addEventListener("keyup", function () {
   } else sectionAge.style.visibility = "visible";
 });
 
-//---EX3---
+//---EX3---PASSWORD VERIFIER 2---
 //Well this is a common one. Add a keyup listener on both fields and show a visual hint (for instance turn the field red) if the password is too short (less than 6 characters) or if the password and its confirmation do not match.
 
 // si le mdp fait moins de 6 caractère --> border rouge
@@ -39,8 +39,8 @@ mdp.addEventListener("keyup", function () {
   let mdpLength = mdp.value.length;
   if (mdpLength < 6) {
     mdp.style.border = "2px solid red";
-  } //si le mdp fait + 6 caractères, on remet la bordure en couleur de base
-  else mdp.style.border = "";
+  } //si le mdp fait - 6 caractères, on met la bordure en couleur rouge
+  else mdp.style.border = ""; //sinon , couleur de base
 });
 
 mdpConfirm.addEventListener("keyup", function () {
@@ -48,10 +48,10 @@ mdpConfirm.addEventListener("keyup", function () {
   let mdpConfirmValue = pwdconfirmation.value;
   if (mdpValue === mdpConfirmValue) {
     mdpConfirm.style.border = ""; //si les mdp sont identiques, on remet la bordure en couleur de base
-  } else mdpConfirm.style.border = "2px solid red";
+  } else mdpConfirm.style.border = "2px solid red"; //si pas identique --> couleur rouge
 });
 
-//---EX4---
+//---EX4---MODE SELECTOR---
 //Finally, use a change listener on the <select> field to toggle a dark mode on the whole page. For ease of use, we'll say that the dark mode is just turning the background black and the text white.
 
 let darkmodeSelector = document.querySelector("#toggle-darkmode");

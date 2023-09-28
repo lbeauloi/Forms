@@ -33,7 +33,7 @@ ageField.addEventListener("keyup", function () {
 // si le mdp de confirm ne correspond pas --> border rouge
 
 let mdp = document.querySelector("#pwd");
-let mdpConfirm = document.querySelector("#pwd-confirm");
+let mdpConfirm = document.querySelector("#pwdconfirmation");
 
 mdp.addEventListener("keyup", function () {
   let mdpLength = mdp.value.length;
@@ -44,8 +44,26 @@ mdp.addEventListener("keyup", function () {
 });
 
 mdpConfirm.addEventListener("keyup", function () {
-  if (mdpConfirm === mdp) {
-    mdp.style.border = "2px solid red";
-  } //si les mdp sont identiques, on remet la bordure en couleur de base
-  else mdp.style.border = "";
+  let mdpValue = pwd.value;
+  let mdpConfirmValue = pwdconfirmation.value;
+  if (mdpValue === mdpConfirmValue) {
+    mdpConfirm.style.border = ""; //si les mdp sont identiques, on remet la bordure en couleur de base
+  } else mdpConfirm.style.border = "2px solid red";
+});
+
+//EX4
+//Finally, use a change listener on the <select> field to toggle a dark mode on the whole page. For ease of use, we'll say that the dark mode is just turning the background black and the text white.
+
+let darkmodeSelector = document.querySelector("#toggle-darkmode");
+darkmodeSelector.addEventListener("change", function () {
+  let darkmodeValue = darkmodeSelector.value;
+  let body = document.body;
+
+  if (darkmodeValue === "dark") {
+    body.style.backgroundColor = "black";
+    body.style.color = "white";
+  } else {
+    body.style.backgroundColor = "white";
+    body.style.color = "black";
+  }
 });
